@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: #F4B909;
+    height: 80px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    list-style: none;
+    font-size: 25px;
+    font-size: 500;
+    color: #FC6404;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.home_message, 
+.contact_message,
+.services_message,
+.offline {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+}
