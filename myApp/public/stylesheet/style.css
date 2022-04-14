@@ -5,15 +5,33 @@
 }
 
 .navbar {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.319);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    margin-left: 1.5rem;
+    padding: .3rem 0;
 }
 
 .navbar-collapse {
-    border-top: 1px solid #fff;
+    margin-right: 3rem;
+}
+
+.navbar-collapse .navbar-nav {
+    display: flex;
+    gap: 3rem;
+    font-size: 20px;
+}
+
+.navbar-nav a {
+    text-decoration: none;
 }
 
 .main-title {
-    margin: 0 50px;
+    text-align: center;
 }
 
 .page {
@@ -22,7 +40,9 @@
 }
 
 .page>.row>p {
-    padding: 10px!important;
+    text-align: center !important;
+    padding: 1rem 0;
+    font-size: 20px;
 }
 
 .footer {
