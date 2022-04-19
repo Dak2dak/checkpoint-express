@@ -1,9 +1,10 @@
 // ========== Checkpoint Express Routing ===============
 
 const express = require('express');
+const router = express.Router();
 const expressLayouts = require('express-ejs-layouts');
 const morgan = require('morgan');
-const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+const daysList = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 
 const app = express();
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
@@ -14,6 +15,23 @@ app.set('view engine', 'ejs');
 
 // directs Express to the public folder for stylesheets
 app.use(express.static("public"));
+
+
+// ================ Routing ====================
+app.get('/offline', (req, res, next) => {
+    let currentDate = Date();
+    const currentDay = currentDate.slice(0,3);
+    for(let i = 0; i < daysList.length; i++) {
+        if(currentDay !== daysList[i]) {
+            in_days = false;
+        }
+        else {
+            in_days = true;
+            break;
+        }
+    }
+    res.render('offline', {in_days});
+});
 
 app.get('/', (req, res) => {
     res.render('home')
@@ -28,21 +46,6 @@ app.get('/contact', (req, res) => {
 });
 
 
-
-
-// const getCurrentTimeString = () => {
-//     return new Date().getTime();
-// }
-
-// middleware middleware middleware middleware
-// const requestTime = (req, res, next) => {
-//     req.time = getCurrentTimeString();
-//     next();
-// }
-
-
-
-
 //error-handling middleware
 app.use(function (err, req, res, next) {
     console.error(err.stack)
@@ -52,8 +55,6 @@ app.use(function (err, req, res, next) {
 app.get('/', (req, res, next) => {
     next(new Error('I am passing you an error!'))
 });
-
-
 
 
 // server's listening
