@@ -1,0 +1,41 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.card {
+    border: 10px solid rgb(0, 0, 0, .200);
+    background-color: #ddd;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+    border-radius: 30%;
+}
+
+.specBorder-1 {
+    border-top-left-radius: 35%;
+}
+
+.specBorder-2 {
+    border-bottom-right-radius: 35%;
+}
+
+h3 {
+    color: rgb(0, 0, 0, .5);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
