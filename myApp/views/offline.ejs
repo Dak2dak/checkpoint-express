@@ -1,28 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include ('include/head') %>
-
     <body id="home-page">
         <%- include ('include/nav') %>
         <div class="page container-fluid">
             <div class="main-title row">
                 <h1>Offline</h1>
-                <h3> <%= in_days ? "Welcome to our website" : 
-                    "This website is only available during working hours, Monday to Friday, from 9 A.M to 5 P.M" %>   </h3>
             </div>
             <div class="row">
-                <p></p>
+                <p>
+                    This website is only available during working hours, 
+                    Monday to Friday, from 9 A.M to 5 P.M
+                </p>
             </div>  
         </div>
+        <%- include ('include/head') %>
         <%- include ('include/script') %>
         <%- include ('include/footer') %>
     </body>
-
-
-
-
-
-
 
 </html>

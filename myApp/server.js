@@ -16,11 +16,8 @@ app.set('view engine', 'ejs');
 // directs Express to the public folder for stylesheets
 app.use(express.static("public"));
 
-
-// ================ Routing ====================
-app.get('/offline', (req, res, next) => {
-    let currentDate = Date();
-    const currentDay = currentDate.slice(0,3);
+app.use((req, res, next) => {
+    let  currentDay = Date().slice(0,3);
     for(let i = 0; i < daysList.length; i++) {
         if(currentDay !== daysList[i]) {
             in_days = false;
@@ -30,8 +27,12 @@ app.get('/offline', (req, res, next) => {
             break;
         }
     }
-    res.render('offline', {in_days});
+    if(in_days) {
+        next();
+    }
+    else res.render('offline')
 });
+
 
 app.get('/', (req, res) => {
     res.render('home')
