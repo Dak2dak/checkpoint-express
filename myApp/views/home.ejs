@@ -5,16 +5,12 @@
     <body id="home-page">
         <%- include ('include/nav') %>
         <div class="page container-fluid">
-            <%= in_days ? (
-                <div>
-                    <div class="main-title row">
-                        <h1>Home Page</h1>
-                    </div>
-                    <div class="row">
-                        <p>Welcome aboard. You are on our home page.</p>
-                    </div> 
-                </div> 
-            ) : <a href="./offline.ejs">Click here!</a>  =%>
+            <div class="main-title row">
+                <h1>Home Page</h1>
+            </div>
+            <div class="row">
+                <p>Welcome aboard. You are on our home page.</p>
+            </div> 
         </div>
         <%- include ('include/footer') %>
     </body>
